@@ -14,6 +14,7 @@ You can install the package via composer:
 
 ```bash
 composer require netbums/laravel-subscription-preset
+composer update
 ```
 After installing, you can run the installer by running:
 
