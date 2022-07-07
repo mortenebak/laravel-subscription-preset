@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Netbums\LaravelSubscriptionPreset;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use Netbums\LaravelSubscriptionPreset\Commands\LaravelSubscriptionPresetCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class LaravelSubscriptionPresetServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('laravel-subscription-preset')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_laravel-subscription-preset_table')
+            ->hasCommand(LaravelSubscriptionPresetCommand::class);
     }
 }

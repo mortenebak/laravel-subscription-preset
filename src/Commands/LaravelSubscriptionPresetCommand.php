@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Netbums\LaravelSubscriptionPreset\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelSubscriptionPresetCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-subscription-preset';
 
     public $description = 'My command';
 
