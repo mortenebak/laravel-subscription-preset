@@ -23,7 +23,6 @@ class LaravelSubscriptionPresetCommand extends Command
 //        '    <options=bold>https://github.com/sponsors/mortenebak</>',
     ];
 
-
     public function handle(): int
     {
         LaravelSubscriptionPreset::install();
