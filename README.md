@@ -1,3 +1,12 @@
+# Laravel Subscription Preset
+
+- **NOT YET READY FOR PRODUCTION**
+
+This is a Laravel Preset Package that will quickly get your app up and running with subscriptions via Stripe and Laravel Cashier.
+
+## Caution
+This package is intended to be used on a **FRESH** install of Laravel.
+Do **NOT** use on an existing Laravel, as it will override some files.
 
 ## Installation
 
@@ -6,6 +15,42 @@ You can install the package via composer:
 ```bash
 composer require netbums/laravel-subscription-preset
 ```
+After installing, you can run the installer by running:
+
+### 1. Copying the files
+```bash
+php artisan laravel-subscription-preset
+```
+This will copy all stubs from the packing into your Laravel project.
+
+### 2. configure .env file
+Next you should copy the following into your `.env` file, and set the Stripe variables with your own data:
+
+```
+CASHIER_MODEL=App\Models\User
+STRIPE_KEY=pk_test_XXXXXXXXXXXXXX
+STRIPE_SECRET=sk_test_XXXXXXXXXXXXXXXXXX
+STRIPE_WEBHOOK_SECRET=whsec_XXXXXXXXXXXXXXXXXXXXX
+CASHIER_PAYMENT_NOTIFICATION=Laravel\Cashier\Notifications\ConfirmPayment
+```
+
+### 3. configure Plan seeder
+Inside  `database\seeders\DatabaseSeeder.php` you should set up your Plans.
+```php
+use App\Models\Plan;
+
+Plan::query()->create([
+    'title' => 'Pro - $99 / month',
+    'slug' => 'monthly',
+    'stripe_id' => 'price_XXXXXXXXXXXXX'
+]);
+Plan::query()->create([
+    'title' => 'Pro - $999 / year',
+    'slug' => 'yearly',
+    'stripe_id' => 'price_XXXXXXXXXXXXX'
+]);
+```
+
 
 ## Testing
 

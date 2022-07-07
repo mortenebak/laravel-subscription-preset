@@ -17,9 +17,9 @@ class LaravelSubscriptionPresetServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-subscription-preset')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-subscription-preset_table')
+//            ->hasConfigFile()
+//            ->hasViews()
+//            ->hasMigration('create_laravel-subscription-preset_table')
             ->hasCommand(LaravelSubscriptionPresetCommand::class);
     }
 }
