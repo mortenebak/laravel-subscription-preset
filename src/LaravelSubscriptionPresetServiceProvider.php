@@ -2,9 +2,9 @@
 
 namespace Netbums\LaravelSubscriptionPreset;
 
+use Netbums\LaravelSubscriptionPreset\Commands\LaravelSubscriptionPresetCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Netbums\LaravelSubscriptionPreset\Commands\LaravelSubscriptionPresetCommand;
 
 class LaravelSubscriptionPresetServiceProvider extends PackageServiceProvider
 {
