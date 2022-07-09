@@ -12,9 +12,6 @@ use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
 use Illuminate\Support\Facades\Route;
 
-/* Frontpage */
-Route::view('/', 'welcome')->name('home');
-
 /* Login and auth stuff */
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
