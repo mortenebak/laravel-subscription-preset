@@ -1,5 +1,5 @@
 {
-    "name": "netbums/laravel-subscription-preset",
+    "name": "mortenebak/laravel-subscription-preset",
     "description": "This is a preset for laravel subscription through stripe",
     "keywords": [
         "Netbums",
@@ -9,7 +9,7 @@
         "preset",
         "laravel-subscription-preset"
     ],
-    "homepage": "https://github.com/netbums/laravel-subscription-preset",
+    "homepage": "https://github.com/mortenebak/laravel-subscription-preset",
     "license": "MIT",
     "authors": [
         {
