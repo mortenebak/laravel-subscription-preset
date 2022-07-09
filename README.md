@@ -1,4 +1,8 @@
 # Laravel Subscription Preset
+<p align="center">
+    <a href="https://packagist.org/packages/netbums/laravel-subscription-preset"><img src="https://img.shields.io/packagist/dt/netbums/laravel-subscription-preset" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/netbums/laravel-subscription-preset"><img src="https://img.shields.io/packagist/v/netbums/laravel-subscription-preset" alt="Latest Stable Version"></a>
+</p>
 
 - **NOT YET READY FOR PRODUCTION**
 
