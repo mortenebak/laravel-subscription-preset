@@ -6,13 +6,15 @@
     <a href="https://packagist.org/packages/netbums/laravel-subscription-preset"><img src="https://img.shields.io/packagist/php-v/netbums/laravel-subscription-preset" alt="Latest Stable Version"></a>
 </p> 
 
-- **NOT YET READY FOR PRODUCTION**
+## About
+This is a Laravel Preset Package that will quickly get your app up and running with subscriptions via Stripe and Laravel Cashier. 
 
-This is a Laravel Preset Package that will quickly get your app up and running with subscriptions via Stripe and Laravel Cashier.
+It comes with a opinionated set of dependencies/requirements, such as Laravel Livewire, Laravel Cashier, PestPHP. It will also set up Vite to have auto-reload when changes occur to .blade.php files.
 
-## Caution
-This package is intended to be used on a **FRESH** install of Laravel.
-Do **NOT** use on an existing Laravel, as it will override some files.
+
+> ### Caution
+> This package is intended to be used on a **FRESH** install of Laravel.
+> Do **NOT** use on an existing Laravel, as it will override some files.
 
 ## Installation
 
@@ -20,17 +22,22 @@ You can install the package via composer:
 
 ```bash
 composer require netbums/laravel-subscription-preset
-composer update
 ```
 After installing, you can run the installer by running:
 
-### 1. Copying the files
+### Copying the files
 ```bash
 php artisan laravel-subscription-preset
 ```
 This will copy all stubs from the packing into your Laravel project.
 
-### 2. configure .env file
+### Install npm packages
+```
+npm install
+```
+Then run either `npm run dev` to start the Vite server or `npm run build` compile production ready assets.
+
+### Configure .env file
 Next you should copy the following into your `.env` file, and set the Stripe variables with your own data:
 
 ```
@@ -41,7 +48,7 @@ STRIPE_WEBHOOK_SECRET=whsec_XXXXXXXXXXXXXXXXXXXXX
 CASHIER_PAYMENT_NOTIFICATION=Laravel\Cashier\Notifications\ConfirmPayment
 ```
 
-### 3. configure Plan seeder
+### Configure Plan seeder
 Inside  `database\seeders\DatabaseSeeder.php` you should set up your Plans.
 ```php
 use App\Models\Plan;
@@ -57,7 +64,6 @@ Plan::query()->create([
     'stripe_id' => 'price_XXXXXXXXXXXXX'
 ]);
 ```
-
 
 ## Testing
 
