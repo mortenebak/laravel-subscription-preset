@@ -8,7 +8,7 @@ use Laravel\Ui\Presets\Preset;
 
 class LaravelSubscriptionPreset extends Preset
 {
-    const NPM_PACKAGES_TO_ADD = [
+    public const NPM_PACKAGES_TO_ADD = [
         '@tailwindcss/forms' => '^0.5.2',
         '@tailwindcss/typography' => '^0.5',
         'alpinejs' => '^3.8',
@@ -22,7 +22,7 @@ class LaravelSubscriptionPreset extends Preset
         'laravel-vite-plugin' => '^0.3.0',
     ];
 
-    const NPM_PACKAGES_TO_REMOVE = [
+    public const NPM_PACKAGES_TO_REMOVE = [
         'lodash',
         'axios',
     ];
