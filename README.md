@@ -29,7 +29,7 @@ After installing, you can run the installer by running:
 ```bash
 php artisan laravel-subscription-preset
 ```
-This will copy all stubs from the packing into your Laravel project.
+This will copy all stubs from the preset into your Laravel project.
 
 ### Install npm packages
 ```
@@ -47,6 +47,7 @@ STRIPE_SECRET=sk_test_XXXXXXXXXXXXXXXXXX
 STRIPE_WEBHOOK_SECRET=whsec_XXXXXXXXXXXXXXXXXXXXX
 CASHIER_PAYMENT_NOTIFICATION=Laravel\Cashier\Notifications\ConfirmPayment
 ```
+Get the values for the Stripe keys in your [Stripe Dashboard](https://dashboard.stripe.com/)
 
 ### Configure Plan seeder
 Inside  `database\seeders\DatabaseSeeder.php` you should set up your Plans.
