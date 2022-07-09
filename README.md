@@ -75,6 +75,13 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 - [Morten Bak](https://github.com/mortenebak)
 - [All Contributors](../../contributors)
+  
+The [Tall Stack](https://github.com/laravel-frontend-presets/tall) included in this preset is created by:
+- [Dan Harrin](https://github.com/DanHarrin)
+- [Liam Hammett](https://github.com/imliam)
+- [Ryan Chandler](https://github.com/ryangjchandler)
+- [Tailwind UI](https://tailwindui.com) for the default authentication and pagination views
+
 
 ## License
 

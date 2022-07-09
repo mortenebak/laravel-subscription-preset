@@ -20,7 +20,7 @@ class LaravelSubscriptionPresetCommand extends Command
         '    <options=bold>https://github.com/mortenebak/laravel-subscription-preset</>',
         '  - Sponsor the creator:',
         '    <options=bold>https://www.paypal.com/paypalme/netbums</>',
-//        '    <options=bold>https://github.com/sponsors/mortenebak</>',
+        '    <options=bold>https://github.com/sponsors/mortenebak/</>',
     ];
 
     public function handle(): int
