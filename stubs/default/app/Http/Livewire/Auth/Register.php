@@ -16,9 +16,6 @@ class Register extends Component
     public $name = '';
 
     /** @var string */
-    public $username = '';
-
-    /** @var string */
     public $email = '';
 
     /** @var string */
@@ -30,17 +27,8 @@ class Register extends Component
     protected $rules = [
         'name' => ['required'],
         'email' => ['required', 'email', 'unique:users'],
-        'username' => ['required', 'max:144', 'unique:users,username'],
         'password' => ['required', 'min:8', 'same:passwordConfirmation'],
     ];
-
-    public function mount(Request $request)
-    {
-        if($request->get('username')) {
-            $this->username = $request->get('username');
-            $this->validateOnly('username');
-        }
-    }
 
     public function updated($propertyName)
     {
@@ -54,7 +42,6 @@ class Register extends Component
         $user = User::create([
             'email' => $this->email,
             'name' => $this->name,
-            'username' => $this->username,
             'password' => Hash::make($this->password),
         ]);
 
