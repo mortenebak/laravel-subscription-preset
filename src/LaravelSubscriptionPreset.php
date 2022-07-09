@@ -32,9 +32,16 @@ class LaravelSubscriptionPreset extends Preset
         static::updatePackages();
 
         $filesystem = new Filesystem();
+        $filesystem->deleteDirectory(resource_path('css'));
         $filesystem->copyDirectory(__DIR__ . '/../stubs/default', base_path());
 
-        // Todo: Auto insert env vars instead of copying over the .env.example and asking users to insert vars manually
+        static::updateFile(base_path('app/Providers/RouteServiceProvider.php'), function ($file) {
+            return str_replace("public const HOME = '/home';", "public const HOME = '/';", $file);
+        });
+
+        static::updateFile(base_path('app/Http/Middleware/RedirectIfAuthenticated.php'), function ($file) {
+            return str_replace("RouteServiceProvider::HOME", "route('home')", $file);
+        });
     }
 
     protected static function updatePackageArray(array $packages)
@@ -43,5 +50,15 @@ class LaravelSubscriptionPreset extends Preset
             static::NPM_PACKAGES_TO_ADD,
             Arr::except($packages, static::NPM_PACKAGES_TO_REMOVE)
         );
+    }
+
+    /**
+     * Update the contents of a file with the logic of a given callback.
+     */
+    protected static function updateFile(string $path, callable $callback)
+    {
+        $originalFileContents = file_get_contents($path);
+        $newFileContents = $callback($originalFileContents);
+        file_put_contents($path, $newFileContents);
     }
 }
