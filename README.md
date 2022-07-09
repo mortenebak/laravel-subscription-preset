@@ -66,6 +66,22 @@ Plan::query()->create([
 ]);
 ```
 
+## Usage
+### Using middleware
+`subscribed` and `not.subscribed`.
+
+### Blade directives
+```php
+@if(auth()->user()->subscribed())
+```
+
+### @can directive
+Two policies exist. You can add your own custom in `\App\Policies\SubscriptionPolicy.php`
+```php
+@can('cancel', auth()->user()->subscription())
+@can('resume', auth()->user()->subscription())
+```
+
 ## Testing
 
 ```bash
