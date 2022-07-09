@@ -9,8 +9,9 @@
 ## About
 This is a Laravel Preset Package that will quickly get your app up and running with subscriptions via Stripe and Laravel Cashier. 
 
-It comes with a opinionated set of dependencies/requirements, such as Laravel Livewire, Laravel Cashier, PestPHP. It will also set up Vite to have auto-reload when changes occur to .blade.php files.
+It comes with an opinionated set of dependencies/requirements, such as Laravel Livewire, Laravel Cashier, PestPHP. It will also set up Vite to have auto-reload when changes occur to .blade.php files.
 
+**If this package helps you in any way, consider ☕ [buying me a cup of coffee](https://github.com/sponsors/mortenebak)**
 
 > ### Caution
 > This package is intended to be used on a **FRESH** install of Laravel.
