@@ -63,8 +63,8 @@
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "phpstan/extension-installer": true
+            "pestphp/pest-plugin": false,
+            "phpstan/extension-installer": false
         }
     },
     "extra": {
