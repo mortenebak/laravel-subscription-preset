@@ -34,7 +34,7 @@
         <script src="//kit.fontawesome.com/3e6c1e0e19.js" crossorigin="anonymous"></script>
     </head>
 
-    <body>
+    <body class="bg-gray-100">
         @yield('body')
 
         @livewireScripts

@@ -1,9 +1,12 @@
 <?php
 
 // Dashboard
+use App\Http\Controllers\Account\UpdatePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\Auth\Dashboard\Dashboard;
+use App\Http\Livewire\Auth\Dashboard\Settings;
 use App\Http\Livewire\Auth\Login;
 use App\Http\Livewire\Auth\Passwords\Confirm;
 use App\Http\Livewire\Auth\Passwords\Email;
@@ -14,38 +17,50 @@ use Illuminate\Support\Facades\Route;
 
 /* Login and auth stuff */
 Route::middleware('guest')->group(function () {
-    Route::get('login', Login::class)
+    Route::get('/login', Login::class)
         ->name('login');
 
-    Route::get('register', Register::class)
+    Route::get('/register', Register::class)
         ->name('register');
 });
 
-Route::get('password/reset', Email::class)
+Route::get('/password/reset', Email::class)
     ->name('password.request');
 
-Route::get('password/reset/{token}', Reset::class)
+Route::get('/password/reset/{token}', Reset::class)
     ->name('password.reset');
 
 Route::middleware('auth')->group(function () {
-    Route::get('email/verify', Verify::class)
+    Route::get('/email/verify', Verify::class)
         ->middleware('throttle:6,1')
         ->name('verification.notice');
 
-    Route::get('password/confirm', Confirm::class)
+    Route::get('/password/confirm', Confirm::class)
         ->name('password.confirm');
-});
 
-Route::middleware('auth')->group(function () {
-    Route::get('email/verify/{id}/{hash}', EmailVerificationController::class)
+    Route::post('/password/update', UpdatePasswordController::class)
+        ->name('password.update');
+
+    Route::get('/email/verify/{id}/{hash}', EmailVerificationController::class)
         ->middleware('signed')
         ->name('verification.verify');
 
-    Route::post('logout', LogoutController::class)
+    Route::post('/logout', LogoutController::class)
         ->name('logout');
+
+    // Dashboard
+    Route::prefix('dashboard')->group(function() {
+
+        Route::get('/', Dashboard::class)
+            ->name('dashboard');
+
+    });
 });
 
-Route::get('/dashboard', \App\Http\Livewire\Dashboard::class)->name('dashboard');
+
+
+
+
 
 // Plans
 Route::group(['namespace' => 'Subscriptions'], function () {
@@ -57,7 +72,7 @@ Route::group(['namespace' => 'Subscriptions'], function () {
 // Subscription and Account stuff
 Route::group(['namespace' => 'Account', 'prefix' => 'account'], function () {
 
-    Route::get('/', [\App\Http\Controllers\Account\AccountController::class, 'index'])->name('account');
+    Route::get('/', [UserController::class, 'show'])->name('account');
     Route::get('/settings', [UserController::class, 'edit'])->name('settings.edit');
     Route::post('/settings', [UserController::class, 'update'])->name('settings.update');
 

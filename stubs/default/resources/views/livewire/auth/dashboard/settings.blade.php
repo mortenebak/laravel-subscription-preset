@@ -4,7 +4,7 @@
 
     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
-            <h2 class="text-xl font-bold">Welcome to your Dashboard, {{ auth()->user()->username }}!</h2>
+            <h2 class="text-xl font-bold">Settings</h2>
         </div>
     </div>
 
